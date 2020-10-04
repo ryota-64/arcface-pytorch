@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  torch:
+    build: .
+    volumes:
+      - ../metric_learning:/workspace/metric_learning
+      - ../data_triplet:/workspace/data_triplet
+#    runtime: nvidia
+    tty: true
+    environment:
+    - PYTHONPATH=/workspace
+    ports:
+      - 8097:8097
